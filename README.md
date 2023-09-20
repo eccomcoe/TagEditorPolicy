@@ -156,9 +156,9 @@ Included resource types：
 Usage:
 
 You can directly deploy the CloudFormation template TagEditorPolicy.json, and associate it with the IAM user or IAM role that needs to use TagEditor.
-
 Alternatively, you can merge TagEditorPolicy.json into your own CloudFormation template.
 
+You are welcome to submit a pull request to merge any tag operation permissions you have used.
 
 
 
