@@ -1,10 +1,11 @@
+## Intro:
 Using tags to label and manage resources on AWS Cloud is a best practice, but managing tags in large-scale environments can be very challenging, especially for the hundreds of resource types on AWS, each with different tag operations. Therefore, AWS provides the Tag Editor tool to help users complete this task. Tag Editor supports over 140 common AWS resource types, avoiding the hassle of managing resource tags through different APIs and is a powerful tool.
 
 To manage AWS resource tags with Tag Editor, in addition to the permissions required by TagEditor itself, you also need the corresponding tag operation API for the AWS service resource type being managed. For example, to add tags to an Amazon EC2 instance, you need the Amazon EC2 CreateTags operation permission. For more details, see: https://docs.aws.amazon.com/tag-editor/latest/userguide/gettingstarted.html
 
 However, AWS does not provide an IAM Managed Policy that covers all resource types supported by Tag Editor, and checking the API documentation for each service would be a time-consuming process. Therefore, I have compiled the tag operation permissions for the AWS resource types actually used in this code repository and shared them with everyone for reference.
 
-Included resource types：
+## Included resource types：
 | resource types |Included in policy|
 | --- | --- |
 | AWS Amplify |     |
@@ -153,7 +154,7 @@ Included resource types：
 | AWS X-Ray |     |
 |     |     |
 
-Usage:
+## Usage:
 
 You can directly deploy the CloudFormation template TagEditorPolicy.json, and associate it with the IAM user or IAM role that needs to use TagEditor.
 Alternatively, you can merge TagEditorPolicy.json into your own CloudFormation template.
