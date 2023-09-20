@@ -13,21 +13,6 @@
                     "Version": "2012-10-17",
                     "Statement": [
                         {
-                            "Sid": "RulesforTagEditor",
-                            "Effect": "Allow",
-                            "Action": [
-                                "tag:getResources",
-                                "tag:getTagKeys",
-                                "tag:getTagValues",
-                                "tag:TagResources",
-                                "tag:UntagResources",
-                                "cloudformation:DescribeStacks",
-                                "cloudformation:ListStackResources",
-                                "resource-groups:*"
-                            ],
-                            "Resource": "*"
-                        },
-                        {
                             "Sid": "RulesforDynamoDB",
                             "Effect": "Allow",
                             "Action": [
@@ -130,24 +115,9 @@
                             "Sid": "RulesforCloudWatch",
                             "Effect": "Allow",
                             "Action": [
-                                "cloudwatch:TagResource"
-                            ],
-                            "Resource": "*"
-                        },
-                        {
-                            "Sid": "RulesforCloudWatchLogs",
-                            "Effect": "Allow",
-                            "Action": [
-                                "logs:TagLogGroup",
-                                "logs:TagResource"
-                            ],
-                            "Resource": "*"
-                        },
-                        {
-                            "Sid": "RulesforEventBridge",
-                            "Effect": "Allow",
-                            "Action": [
-                                "events:TagResource"
+                                "logs:CreateLogGroup",
+                                "logs:CreateLogStream",
+                                "logs:PutLogEvents"
                             ],
                             "Resource": "*"
                         },
@@ -181,6 +151,15 @@
                             "Effect": "Allow",
                             "Action": [
                                 "kafka:TagResource"
+                            ],
+                            "Resource": "*"
+                        },
+                        {
+                            "Sid": "RulesforCloudWatchLogsandAlarm",
+                            "Effect": "Allow",
+                            "Action": [
+                                "logs:TagLogGroup",
+                                "cloudwatch:TagResource"
                             ],
                             "Resource": "*"
                         },
@@ -261,6 +240,21 @@
                             "Effect": "Allow",
                             "Action": [
                                 "elasticmapreduce:AddTags"
+                            ],
+                            "Resource": "*"
+                        },
+                        {
+                            "Sid": "RulesforTagEditor",
+                            "Effect": "Allow",
+                            "Action": [
+                                "tag:getResources",
+                                "tag:getTagKeys",
+                                "tag:getTagValues",
+                                "tag:TagResources",
+                                "tag:UntagResources",
+                                "cloudformation:DescribeStacks",
+                                "cloudformation:ListStackResources",
+                                "resource-groups:*"
                             ],
                             "Resource": "*"
                         }
